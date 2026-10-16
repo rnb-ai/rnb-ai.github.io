@@ -1,0 +1,11 @@
+# Main navigation, shown in the header of every page.
+- title: Home
+  url: index.html
+- title: About
+  url: about.html
+- title: Programs
+  url: programs.html
+- title: Community
+  url: community.html
+- title: Contact
+  url: contact.html

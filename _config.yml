@@ -1,0 +1,12 @@
+title: R&B.AI
+url: https://rnb-ai.org
+
+# Repository files that must not be published
+exclude:
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

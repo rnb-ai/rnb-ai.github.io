@@ -2,12 +2,20 @@
 
 Source of the R&B.AI website, published at **https://rnb-ai.org**.
 
-R&B.AI is an independent AI non profit organisation focused on advancing AI through open benchmarks and shared knowledge.
+R&B.AI is a French non-profit association (loi 1901) whose mission is to promote, study and develop artificial intelligence and computer science, in the open.
 
 ## Structure
 
 ```
 .
+├── _config.yml              Site settings (Jekyll)
+├── _data/
+│   └── navigation.yml       Main navigation links
+├── _layouts/
+│   └── default.html         Page skeleton: <head>, header, footer
+├── _includes/
+│   ├── header.html          Logo, navigation and header button
+│   └── footer.html          Organisation details (RNA/SIREN), address, links
 ├── index.html               Home page
 ├── about.html               Mission statement, values, registered details, statutory purpose and board
 ├── programs.html            Programs: open benchmarks, research commons, collective action, awareness & support
@@ -21,25 +29,41 @@ R&B.AI is an independent AI non profit organisation focused on advancing AI thro
 │       ├── logo.svg         Logo
 │       └── icon.ico         Favicon
 ├── .github/workflows/
-│   └── static.yml           GitHub Pages deployment
+│   └── pages.yml            Build and deployment to GitHub Pages
 └── README.md
 ```
 
-The HTML pages stay at the root so that their URLs (e.g. `/about.html`) do not change. Each page is a separate HTML file with the same header and footer; when you change the navigation or the footer (which shows the RNA/SIREN numbers, address and GitHub link), update every page. The site is plain HTML, CSS and a small vanilla JavaScript file, with no build step and no dependencies to install. Fonts come from Google Fonts and icons from Font Awesome (via cdnjs).
+The pages stay at the root so that their URLs (e.g. `/about.html`) do not change. Files starting with `_` or `.` and `README.md` are not published.
+
+## Editing the site
+
+- **Page content:** each page holds only its own content, inside `<main>`. A short block at the top of the file sets the page's title and description:
+
+  ```yaml
+  ---
+  title: "About"
+  description: "About R&B.AI: mission statement, values, ..."
+  ---
+  ```
+
+  The home page uses `full_title` instead of `title`, and the contact page sets `header_button: email` to show "Say hello" in the header.
+- **Header, footer and navigation:** edit them once in `_includes/` and `_data/navigation.yml`; every page picks up the change.
+- **Styles and scripts:** `assets/css/style.css` and `assets/js/script.js`. Fonts come from Google Fonts and icons from Font Awesome (via cdnjs).
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
+Previewing requires [Jekyll](https://jekyllrb.com/docs/installation/) (Ruby):
 
 ```sh
-python -m http.server 8000
+gem install jekyll
+jekyll serve
 ```
 
-Then visit http://localhost:8000.
+Then visit http://localhost:4000.
 
 ## Deployment
 
-Every push to `main` deploys the whole repository to GitHub Pages through the `Deploy static content to Pages` workflow. It can also be run manually from the Actions tab.
+Every push to `main` builds the site with Jekyll and deploys it to GitHub Pages through the `Deploy Jekyll site to Pages` workflow. It can also be run manually from the Actions tab.
 
 ## Contact
 

@@ -1,0 +1,13 @@
+    <header class="topbar">
+      <a class="brand brand-image" href="index.html" aria-label="R&B.AI home"><img src="assets/img/logo.svg" alt="R&B.AI" /></a>
+      <nav class="nav" aria-label="Main navigation">
+        {%- for item in site.data.navigation %}
+        <a href="{{ item.url }}"{% if page.path == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor %}
+      </nav>
+      {%- if page.header_button == "email" %}
+      <a class="button button-small" href="mailto:contact@rnb-ai.org">Say hello <span><i class="fa-solid fa-arrow-up diagonal-arrow"></i></span></a>
+      {%- else %}
+      <a class="button button-small" href="contact.html">Join the network <span><i class="fa-solid fa-arrow-up diagonal-arrow"></i></span></a>
+      {%- endif %}
+    </header>
