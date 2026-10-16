@@ -4,6 +4,8 @@ url: https://rnb-ai.org
 # Repository files that must not be published
 exclude:
   - README.md
+  - LICENSE
+  - LICENSE-CONTENT
 
 defaults:
   - scope:

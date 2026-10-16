@@ -30,10 +30,12 @@ R&B.AI is a French non-profit association (loi 1901) whose mission is to promote
 │       └── icon.ico         Favicon
 ├── .github/workflows/
 │   └── pages.yml            Build and deployment to GitHub Pages
+├── LICENSE                  MIT License (code)
+├── LICENSE-CONTENT          CC BY 4.0 (text content)
 └── README.md
 ```
 
-The pages stay at the root so that their URLs (e.g. `/about.html`) do not change. Files starting with `_` or `.` and `README.md` are not published.
+The pages stay at the root so that their URLs (e.g. `/about.html`) do not change. Files starting with `_` or `.`, `README.md` and the license files are not published.
 
 ## Editing the site
 
@@ -64,6 +66,12 @@ Then visit http://localhost:4000.
 ## Deployment
 
 Every push to `main` builds the site with Jekyll and deploys it to GitHub Pages through the `Deploy Jekyll site to Pages` workflow. It can also be run manually from the Actions tab.
+
+## License
+
+- **Code** (HTML templates, CSS, JavaScript, configuration): [MIT License](LICENSE).
+- **Text content** of the pages: [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-CONTENT). You may reuse and adapt it, provided you credit R&B.AI and link to https://rnb-ai.org.
+- **Name and logo:** the R&B.AI name, logo (`assets/img/logo.svg`) and favicon (`assets/img/icon.ico`) are not covered by these licenses and may not be used without permission.
 
 ## Contact
 
